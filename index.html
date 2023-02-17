@@ -30,7 +30,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh;
+            height: calc(var(--vh, 1vh) * 100);
+
         }
         .copyright{
             margin: 2rem 0rem 0rem 0rem;
@@ -50,6 +52,9 @@
         let copy = document.getElementsByClassName("copyrightDate")[0],
             date = new Date().getFullYear();
         copy.innerHTML = `${date}`;
+        
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
     </script>
 </body>
 </html>
